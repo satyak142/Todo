@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- fontawesome icon link -->
+    <script src="https://kit.fontawesome.com/2292f8a350.js" crossorigin="anonymous"></script>
+    <!-- bootstrap external links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- external css file link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="container">
+      <h1 class="text-center my-4 p-3 text-primary"> <i class="text-dark-emphasis fa-solid fa-calendar-week"></i> To-Do List <span class="text-info-emphasis">-</span> <span class="text-muted "> <i class="text-dark-emphasis fa-solid fa-pen-nib"></i> Daily Tasks</span></h1>
+    </header>
+    <main class="container">
+      <form id="form-todo" class="p-3 ">
+          <!-- button for drop down form like add task -->
+          <div class="m-1 d-flex flex-row-reverse">
+              <button type="button" id="formToggle" class="btn btn-dark btn-md">Add New Task</button>
+          </div>
+          <!-- form to add task for the table -->
+          <div class="d-none back z-1 position-absolute top-50 start-50 translate-middle rounded-1 container border border-info py-2" id="formTask">
+            <div class="my-2 form-group row pe-3">
+                <label for="myTask" class="col-form-label fs-5 col col-md-2 col-sm-3 col-xs-4 col-4">My Task :</label>
+                <div class="col col-md-10 col-sm-9 col-xs-8 col-8 pad">
+                    <input type="text" class="form-control" id="myTask" maxlength="17" placeholder="Your Task" required>
+                </div>
+            </div>
+            <div class="my-2 form-group row pe-3">
+                <label for="taskDate" class="col-form-label fs-5 col col-md-2 col-sm-3 col-xs-4 col-4">Due Date</label>
+                <div class="col col-md-10 col-sm-9 col-xs-8 col-8 pad">
+                    <input type="date" class="form-control" id="taskDate" required>
+                </div>
+            </div>
+            <div class="my-2 form-group row pe-3">
+                <label for="priority" class="col-form-label fs-5 col col-md-2 col-sm-3 col-xs-4 col-4">Priority :</label>
+                <div class="col col-md-10 col-sm-9 col-xs-8 col-8 pad">
+                    <select class="form-select" id="priority" required>
+                        <option selected>Select Priority</option>
+                        <option value="danger">High</option>
+                        <option value="warning">Medium</option>
+                        <option value="success">Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="my-2 form-group">
+                <label for="addInfo" class="form-label fs-5">Additional Info :</label>
+                <textarea type="text" class="form-control" id="addInfo" placeholder="..." required></textarea>
+            </div>
+            <div class="my-1 d-flex flex-row justify-content-center p-1">
+                <button type="submit" id="taskSubmit" class="btn btn-primary mx-2 px-4 btn-md text-light">Add Task</button>
+                <button type="reset"  class="btn btn-info mx-2 px-4 btn-md text-light">Reset</button>
+                <button type="button" id="formCancel" class="btn btn-dark mx-2 px-4 btn-md text-light">Cancel</button>
+            </div>
+          </div>
+        </form>
+    </main>
+    <section class="container">
+        <div class="d-flex flex-row flex-wrap flex-wrap">
+            <div class="table-responsive flex-fill overflow-visible" id="taskTable">
+                <table class="table caption-top table-borderless" >
+                    <caption class="text-dark-emphasis font-monospace fw-bold fst-italic fs-4">To-Do List</caption>
+                    <thead>
+                      <tr class="text-info-emphasis fs-5">
+                        <th scope="col">#</th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Completed</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="taskList">
+                        
+                        
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </section>
+    <!-- external js file link -->
+    <script src="js/main.js"></script>
+</body>
+</html>

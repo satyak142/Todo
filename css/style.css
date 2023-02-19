@@ -1,0 +1,27 @@
+.pad{
+    padding: 7px 0;
+}
+.back{
+    backdrop-filter: blur(5px);
+}
+.success{
+    color: var(--bs-teal);
+}
+.warning{
+    color: var(--bs-yellow);
+}
+.danger{
+    color: var(--bs-orange);
+}
+.infoCloud{
+    top: 20px;
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+    padding: 7px;
+    border-radius: 5px;
+    display: none;
+}
+
